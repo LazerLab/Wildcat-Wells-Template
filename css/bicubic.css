@@ -1,0 +1,7 @@
+#myCanvas {
+  float: left;  
+}
+
+#controlTable input[type=text] {
+  width: 35px;
+}

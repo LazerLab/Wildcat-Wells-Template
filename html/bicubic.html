@@ -1,0 +1,28 @@
+<h1>Bicubic Interpolation</h1>
+<p>Choose some settings then click render.  If it's great, then name it and click save.  You can render/save more than 1.</p>
+<h2>Status:<span id="statuss" style="font-size:100%;">Click Render</span></h2>
+
+<canvas id="myCanvas" style="border:1px solid #d3d3d3;background:#ffffff;" height="512" width="512"> YourbrowserdoesnotsupporttheHTML5canvastag.</canvas>
+<div id="controlPanel">
+  <table id="controlTable">
+    <tr><th>Size(power of 2)</th><td><input id="width" value="512" type="text"/>x<input id="height" value="512" type="text"/></td></tr>
+    <tr><th>Seed</th><td><input id="seed" value="1234" type="text"/></td></tr>
+  </table>
+  <input type="submit" value="Render" onclick="drawBicubic();"/>
+</div>
+<br/>
+Name:<input id="name" value="" type="text"/><br/>
+<div id="settings"></div>
+
+<input type="submit" value="Save" onclick="submitSettings();"/>
+
+
+<script>
+  function initialize() {
+    startBicubic(); 
+  }
+  
+  function initializeVisualization() {
+    startBicubic(); 
+  }
+</script>

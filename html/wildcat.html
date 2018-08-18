@@ -1,0 +1,94 @@
+<div class="modal fade bs-example-modal-sm" id="instructions">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title">Instructions <span id="instruction_time_limit"><span class="countdown-clock"></span></span></h2>
+      </div>
+      <div class="modal-body">
+      
+        <div id="instructions1">
+        <h2 style="text-align:center">You're Drilling for Oil!</h2>
+        <div style="text-align:center"><img src="/attachment/WW_gameplay.png" style="width:200px;"/></div>
+        <br></br>
+        <p>You are exploring land for oil.  On each round, you can choose a spot of land to drill for oil.  
+        The amount of oil you got for drilling will be indicated by a colored square where you drilled 
+        as well as the height and color of a bar on the left side of the screen.</p>
+        
+        </div> 
+
+        <div id="instructions2" style="display:none;">
+        <p>Other people will be playing the game at the same time as you.  
+        At time, you may be able to see where they drilled and/or how much oil they got for drilling. 
+        They might also be able to see where you drilled and how much you got. 
+        
+        If you drill in the same spot as someone else you will receive the same amount of oil, 
+        In other words, oil is <u>not</u> divided by the number of people drilling in the same spot.</p>
+        
+        <p>For each patch of land, you will have <b id="i_rounds">15</b> rounds of drilling.</p>
+        <p>You will have <b id="i_seconds">30</b> seconds for each round.</p>
+        
+        <p>The game will move to the next round once every player has drilled or the time is up. 
+        If the time passes before you choose a place to drill, you will get no points for that round, 
+        which will be seen as an empty bar with a red "X" in the middle.</p>
+        </div> 
+
+      </div>
+      <div class="modal-footer">
+        <button id="im_ready" type="button" class="btn btn-default" data-dismiss="modal">I'm ready</button>
+        <button id="close_instructions" type="button" class="btn btn-primary">Next</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div class="modal fade bs-example-modal-sm" id="survey1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div id="q1">
+      <h2>Survey</h2>
+        How confident were you that you had the best possible solution?<br/><br/>
+      
+        <br/><div><input class="btn btn-primary" type="submit" value="Very confident" onclick="q1('1')"/></div>
+        <br/><div><input class="btn btn-primary" type="submit" value="Somewhat confident" onclick="q1('2')"/></div>
+        <br/><div><input class="btn btn-primary" type="submit" value="Neither confident nor unsure" onclick="q1('3')"/></div>
+        <br/><div><input class="btn btn-primary" type="submit" value="Somewhat unsure" onclick="q1('4')"/></div>
+        <br/><div><input class="btn btn-primary" type="submit" value="Very unsure" onclick="q1('5')"/></div>
+      
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+<div id="wild_wrapper">
+<div id="history_wrapper"></div>
+<div id="right_side">
+  <canvas id="myCanvas" style="border:1px solid #d3d3d3;background:#ffffff;" height="512" width="512"> YourbrowserdoesnotsupporttheHTML5canvastag.</canvas>
+  <div id="canvas"></div>
+  <div id="waitForOthers" style="">Waiting for the other players.</div>
+  <div id="scores" style="display: none;">
+    <table id="scoreTable"></table><br/>
+    <div><input class="btn btn-primary" type="submit" value="Close" onclick="hideScores()" style="float: right;" /></div>
+  </div>
+  <table id="bottom_panels"><tr>
+    <td id="left_panel" class="bottom_panel">
+      X:<input id="x_coord" class="coord_input" type="text" value="" />
+      Y:<input id="y_coord" class="coord_input" type="text" value="" /><br/>
+      <input id="drill" type="submit" value="Drill!"/>
+    </td>
+    <td id="middle_panel" class="bottom_panel">
+      Time left:<br/>
+      <div id="timer"><span class="countdown-clock">0:30</span></div>
+      Current Round: <span id="round">1</span>    
+    </td>
+    <td id="right_panel" class="bottom_panel">
+      TOTAL: <span id="score">0</span>
+    </td>
+  </table>
+</div>
+</div>
+<script>
+  function initialize() {
+    initializeGame(); 
+  }
+</script>
